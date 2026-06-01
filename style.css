@@ -48,7 +48,7 @@ body{
 
     grid-template-columns:
         1fr
-        repeat(4, 68px);
+        repeat(4, 80px);
 
     align-items:center;
 
@@ -84,7 +84,7 @@ body{
     align-items:center;
     gap:8px;
 
-    font-size:1.15rem;
+    font-size:1.1rem;
     font-weight:700;
 
     letter-spacing:2px;
@@ -213,18 +213,56 @@ button:active{
 
 
 /* ---------- SMALL PHONES ---------- */
+@media (max-width: 520px){
 
-@media (max-width:420px){
+    #topbar{
+
+        height:auto;
+
+        padding:
+            env(safe-area-inset-top)
+            10px
+            8px
+            10px;
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        grid-template-areas:
+            "title title title title"
+            "level new random reset";
+    }
 
     .title{
-        font-size:1rem;
+
+        grid-area:title;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        margin-top: 10px;
+
+        gap:8px;
     }
 
-    .status{
-        font-size:.85rem;
+    #levelBtn{
+        grid-area:level;
     }
 
+    #newBtn{
+        grid-area:new;
+    }
+
+    #randomBtn{
+        grid-area:random;
+    }
+
+    #resetBtn{
+        grid-area:reset;
+    }
 }
+
 
 .actions{
 
